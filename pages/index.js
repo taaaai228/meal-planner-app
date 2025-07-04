@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import MealPlannerApp from '../components/MealPlannerApp';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
       </Head>
       
       <MealPlannerApp />
+      <ErrorBoundary>
+        <MealPlannerApp />
+      </ErrorBoundary>
     </div>
   );
 }
